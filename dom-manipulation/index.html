@@ -43,7 +43,8 @@
       background-color: #45a049;
     }
 
-    input {
+    input[type="text"],
+    input[type="file"] {
       margin: 5px;
       padding: 10px;
       border: 1px solid #ccc;
@@ -69,8 +70,15 @@
   <hr>
 
   <h3>Add a New Quote</h3>
-  <!-- The form will be created dynamically using JS -->
   <div id="addQuoteContainer"></div>
+
+  <hr>
+
+  <h3>Import / Export Quotes (JSON)</h3>
+  <div>
+    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+    <button id="exportBtn">Export Quotes as JSON</button>
+  </div>
 
   <script src="./script.js"></script>
 </body>
