@@ -8,46 +8,69 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin: 30px;
-      background: #f7f7f7;
+      background-color: #f7f7f7;
+      margin: 40px;
     }
+
     h1 {
       color: #333;
     }
+
     #quoteDisplay {
-      margin: 20px auto;
-      padding: 20px;
+      background: #fff;
       width: 60%;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
+      margin: 20px auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       font-size: 1.2rem;
+      color: #444;
     }
+
+    button {
+      padding: 10px 15px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
     input {
       margin: 5px;
-      padding: 8px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 200px;
     }
-    button {
-      padding: 8px 12px;
-      margin: 5px;
-      cursor: pointer;
+
+    #addQuoteContainer {
+      margin-top: 20px;
+    }
+
+    hr {
+      margin: 30px 0;
     }
   </style>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
 
-  <div id="quoteDisplay">Click the button to see a quote!</div>
+  <div id="quoteDisplay">Click "Show New Quote" to see a random quote!</div>
   <button id="newQuote">Show New Quote</button>
 
   <hr>
 
   <h3>Add a New Quote</h3>
-  <div>
-    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button id="addQuoteBtn">Add Quote</button>
-  </div>
+  <!-- The form will be created dynamically using JS -->
+  <div id="addQuoteContainer"></div>
 
   <script src="./script.js"></script>
 </body>
