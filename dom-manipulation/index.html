@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dynamic Quote Generator with Filter</title>
+  <title>Dynamic Quote Generator with Server Sync</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f8f8f8;
       padding: 20px;
       text-align: center;
     }
@@ -41,28 +41,36 @@
       background: #555;
     }
 
-    input {
+    input, select {
       margin: 5px;
       padding: 8px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
 
-    select {
-      margin: 10px;
-      padding: 8px;
-      border-radius: 5px;
-    }
-
     #formContainer {
       margin-top: 20px;
+    }
+
+    #notification {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #007bff;
+    }
+
+    #conflictNotice {
+      background-color: #ffeeba;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 15px;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <h1>Dynamic Quote Generator with Filter</h1>
+  <h1>Dynamic Quote Generator with Server Sync</h1>
 
-  <!-- Category Filter -->
+  <!-- Filter Dropdown -->
   <div>
     <label for="categoryFilter">Filter by Category:</label>
     <select id="categoryFilter" onchange="filterQuotes()">
@@ -75,6 +83,10 @@
   <button id="newQuote">Show New Quote</button>
   <button id="exportBtn">Export Quotes (JSON)</button>
   <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+  <button id="syncBtn">Sync with Server</button>
+
+  <div id="notification"></div>
+  <div id="conflictNotice"></div>
 
   <!-- Add Quote Form -->
   <div id="formContainer">
